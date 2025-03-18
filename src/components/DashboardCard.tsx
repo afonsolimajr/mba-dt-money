@@ -1,4 +1,8 @@
-import { ArrowCircleDown, ArrowCircleUp, Money } from "@phosphor-icons/react";
+import {
+  ArrowCircleDown,
+  ArrowCircleUp,
+  CurrencyDollar,
+} from "@phosphor-icons/react";
 
 export default function DashboardCard({
   type,
@@ -20,7 +24,7 @@ export default function DashboardCard({
       break;
     case "TOT":
       title = "Total";
-      icon = <Money size={32} color="white" />;
+      icon = <CurrencyDollar size={32} color="white" />;
       bgColor = "bg-green-700";
       break;
   }

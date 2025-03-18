@@ -8,7 +8,7 @@ export default function Header() {
           <HandCoins size={32} color="green" />
           <h2>DT Money</h2>
         </div>
-        <div>Nova Transação</div>
+        <button className="bg-green-700 ">Nova Transação</button>
       </div>
     </div>
   );
