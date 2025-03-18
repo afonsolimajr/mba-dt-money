@@ -1,3 +1,4 @@
+import { formatMoney } from "@/utils/NumberUtil";
 import {
   ArrowCircleDown,
   ArrowCircleUp,
@@ -37,7 +38,7 @@ export default function DashboardCard({
         <p>{title}</p>
         {icon}
       </div>
-      <h2>{value}</h2>
+      <h2>{formatMoney(value)}</h2>
     </div>
   );
 }
