@@ -12,21 +12,23 @@ export default function DashboardCard({
   type: "IN" | "OUT" | "TOT";
   value: number;
 }) {
-  let bgColor = "bg-gray-700";
+  let bgColor = "bg-[var(--card-background-secondary-color)]";
   let title = "Entradas";
-  let icon = <ArrowCircleUp size={32} color="green" />;
+  let icon = (
+    <ArrowCircleUp size={32} color="var(--card-background-primary-color)" />
+  );
 
   switch (type) {
     case "IN":
       break;
     case "OUT":
       title = "Saídas";
-      icon = <ArrowCircleDown size={32} color="red" />;
+      icon = <ArrowCircleDown size={32} color="var(--negative-color)" />;
       break;
     case "TOT":
       title = "Total";
       icon = <CurrencyDollar size={32} color="white" />;
-      bgColor = "bg-green-700";
+      bgColor = "bg-[var(--card-background-primary-color)]";
       break;
   }
 

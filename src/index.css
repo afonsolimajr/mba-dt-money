@@ -11,7 +11,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #202024;
   margin: 0;
 
   font-synthesis: none;
@@ -50,6 +50,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --background-color: #121214;
+  --card-background-primary-color: #066247;
+  --card-background-secondary-color: #36363C;
+
+  --negative-color: #f75d6b;
 }
 
 a {
@@ -72,7 +78,8 @@ body {
   justify-content: start;
   min-width: 320px;
   min-height: 100vh;
-  /* background-color: #535bf2; */
+  background-color: #202024;
+  color: white;
 }
 
 h1 {

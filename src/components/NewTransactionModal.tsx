@@ -17,11 +17,14 @@ export default function NewTransactionModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="default" className="bg-green-700 ">
+        <Button
+          variant="default"
+          className="bg-[var(--card-background-primary-color)] "
+        >
           Nova Transação
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px] bg-gray-900">
+      <DialogContent className="sm:max-w-[425px] bg-[var(--background-color)]">
         <DialogHeader>
           <DialogTitle>Nova Transação</DialogTitle>
           <DialogDescription>Adiciona uma nova transação.</DialogDescription>
@@ -61,7 +64,10 @@ export default function NewTransactionModal() {
                   id="option-one"
                   className="hidden"
                 />
-                <ArrowCircleUp size={24} color="green" />
+                <ArrowCircleUp
+                  size={24}
+                  color="var(--card-background-primary-color)"
+                />
                 Entrada
               </Label>
             </div>
@@ -75,14 +81,17 @@ export default function NewTransactionModal() {
                   id="option-two"
                   className="hidden"
                 />
-                <ArrowCircleDown size={24} color="red" />
+                <ArrowCircleDown size={24} color="var(--negative-color)" />
                 Saída
               </Label>
             </div>
           </RadioGroup>
         </div>
         <DialogFooter>
-          <Button type="submit" className="bg-green-800 w-full">
+          <Button
+            type="submit"
+            className="bg-[var(--card-background-primary-color)] w-full"
+          >
             Cadastrar
           </Button>
         </DialogFooter>

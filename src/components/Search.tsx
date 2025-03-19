@@ -8,7 +8,7 @@ export default function Search() {
         placeholder="Busque uma transação"
         className="w-full bg-gray-950 px-2 rounded"
       />
-      <button className="flex items-center gap-2 border-green-700 border-2 text-green-700 outline-2 outline-green-700">
+      <button className="flex items-center gap-2 border-[var(--card-background-primary-color)] border-2 text-[var(--card-background-primary-color)] outline-2 outline-[var(--card-background-primary-color)]">
         <MagnifyingGlass size={32} />
         Buscar
       </button>

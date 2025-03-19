@@ -7,7 +7,9 @@ export default function TransactionsPanel() {
   return (
     <div className="flex flex-col w-full max-w-[1120px] gap-2">
       {transactions.map((transaction) => {
-        return <TransactionItem transaction={transaction} />;
+        return (
+          <TransactionItem key={transaction.id} transaction={transaction} />
+        );
       })}
     </div>
   );
