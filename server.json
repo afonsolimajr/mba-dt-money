@@ -15,6 +15,86 @@
       "category": "Despesa",
       "price": 50,
       "createdAt": "2025-03-18T20:28:19.193Z"
+    },
+    {
+      "id": 3,
+      "description": "Freelance de design",
+      "type": "income",
+      "category": "Serviço",
+      "price": 5000,
+      "createdAt": "2025-03-17T15:10:30.120Z"
+    },
+    {
+      "id": 4,
+      "description": "Compra de material de escritório",
+      "type": "outcome",
+      "category": "Despesa",
+      "price": 200,
+      "createdAt": "2025-03-16T10:45:22.980Z"
+    },
+    {
+      "id": 5,
+      "description": "Consultoria de marketing",
+      "type": "income",
+      "category": "Serviço",
+      "price": 7200,
+      "createdAt": "2025-03-15T09:30:15.760Z"
+    },
+    {
+      "id": 6,
+      "description": "Aluguel do escritório",
+      "type": "outcome",
+      "category": "Despesa",
+      "price": 3000,
+      "createdAt": "2025-03-14T08:15:00.500Z"
+    },
+    {
+      "id": 7,
+      "description": "Venda de template WordPress",
+      "type": "income",
+      "category": "Produto Digital",
+      "price": 1500,
+      "createdAt": "2025-03-13T18:40:45.330Z"
+    },
+    {
+      "id": 8,
+      "description": "Assinatura de software",
+      "type": "outcome",
+      "category": "Tecnologia",
+      "price": 120,
+      "createdAt": "2025-03-12T21:05:12.250Z"
+    },
+    {
+      "id": 9,
+      "description": "Curso online vendido",
+      "type": "income",
+      "category": "Educação",
+      "price": 800,
+      "createdAt": "2025-03-11T14:22:09.780Z"
+    },
+    {
+      "id": 10,
+      "description": "Conta de energia elétrica",
+      "type": "outcome",
+      "category": "Despesa",
+      "price": 350,
+      "createdAt": "2025-03-10T11:11:59.600Z"
+    },
+    {
+      "id": 11,
+      "description": "Projeto de branding",
+      "type": "income",
+      "category": "Serviço",
+      "price": 6200,
+      "createdAt": "2025-03-09T13:30:45.430Z"
+    },
+    {
+      "id": 12,
+      "description": "Compra de domínio",
+      "type": "outcome",
+      "category": "Tecnologia",
+      "price": 90,
+      "createdAt": "2025-03-08T16:55:30.310Z"
     }
   ]
 }
