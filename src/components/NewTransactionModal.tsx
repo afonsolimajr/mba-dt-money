@@ -21,7 +21,7 @@ const newTransactionFormSchema = z.object({
   description: z.string(),
   price: z.string(),
   category: z.string(),
-  type: z.string(),
+  type: z.enum(["income", "outcome"]),
 });
 
 type NewTransactionFormInputs = z.infer<typeof newTransactionFormSchema>;
@@ -95,7 +95,7 @@ export default function NewTransactionModal() {
                   <RadioGroupItem
                     value="income"
                     id="income"
-                    className="hidden"
+                    // className="hidden"
                   />
                   <ArrowCircleUp
                     size={24}
@@ -112,7 +112,7 @@ export default function NewTransactionModal() {
                   <RadioGroupItem
                     value="outcome"
                     id="outcome"
-                    className="hidden"
+                    // className="hidden"
                   />
                   <ArrowCircleDown size={24} color="var(--negative-color)" />
                   Saída

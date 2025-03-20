@@ -3,6 +3,7 @@ import { createContext, ReactNode, useEffect, useState } from "react";
 
 interface TransactionContextType {
   transactions: Transaction[];
+  fetchTransactions: (query?: string) => void;
 }
 
 export const TransactionsContext = createContext({} as TransactionContextType);
@@ -14,19 +15,25 @@ interface TransactionsProviderProps {
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
 
-  async function LoadTransactions() {
-    const response = await fetch("http://localhost:3333/transactions");
+  async function fetchTransactions(query?: string) {
+    let url = "http://localhost:3333/transactions";
+
+    if (query) url += "?description_like=" + query;
+
+    const response = await fetch(url);
     const data = await response.json();
 
     setTransactions(data);
   }
 
   useEffect(() => {
-    LoadTransactions();
+    fetchTransactions();
   }, []);
 
   return (
-    <TransactionsContext.Provider value={{ transactions: transactions }}>
+    <TransactionsContext.Provider
+      value={{ transactions: transactions, fetchTransactions }}
+    >
       {children}
     </TransactionsContext.Provider>
   );
