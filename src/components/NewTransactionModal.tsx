@@ -16,6 +16,8 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useContext } from "react";
+import { TransactionsContext } from "@/contexts/TransactionsContext";
 
 const newTransactionFormSchema = z.object({
   description: z.string(),
@@ -35,8 +37,18 @@ export default function NewTransactionModal() {
     resolver: zodResolver(newTransactionFormSchema),
   });
 
+  const { createTransaction } = useContext(TransactionsContext);
+
   function handleSearchTransactions(data: NewTransactionFormInputs) {
     console.log(data);
+    createTransaction({
+      id: "",
+      description: data.description,
+      type: data.type,
+      price: Number.parseFloat(data.price),
+      category: data.category,
+      createdAt: new Date().toISOString(),
+    });
   }
 
   return (

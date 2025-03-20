@@ -95,6 +95,14 @@
       "category": "Tecnologia",
       "price": 90,
       "createdAt": "2025-03-08T16:55:30.310Z"
+    },
+    {
+      "id": 13,
+      "description": "teste",
+      "type": "income",
+      "price": 100,
+      "category": "cat",
+      "createdAt": "2025-03-20T20:58:35.454Z"
     }
   ]
 }
