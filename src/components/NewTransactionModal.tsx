@@ -32,6 +32,7 @@ export default function NewTransactionModal() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { isSubmitting },
   } = useForm<NewTransactionFormInputs>({
     resolver: zodResolver(newTransactionFormSchema),
@@ -49,6 +50,7 @@ export default function NewTransactionModal() {
       category: data.category,
       createdAt: new Date().toISOString(),
     });
+    reset();
   }
 
   return (

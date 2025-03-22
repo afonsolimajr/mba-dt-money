@@ -1,5 +1,6 @@
 import "./App.css";
 import Background from "./components/Background";
+import PaginationBar from "./components/PaginationBar";
 import Search from "./components/Search";
 import TransactionsPanel from "./components/TransactionsPanel";
 
@@ -10,6 +11,7 @@ function App() {
         <Background />
         <Search />
         <TransactionsPanel />
+        <PaginationBar />
       </div>
     </div>
   );

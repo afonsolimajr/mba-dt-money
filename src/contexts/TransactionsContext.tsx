@@ -5,6 +5,11 @@ interface TransactionContextType {
   transactions: Transaction[];
   fetchTransactions: (query?: string) => void;
   createTransaction: (transaction: Transaction) => void;
+  activePage: number;
+  goToFirst: () => void;
+  goToLast: () => void;
+  goToPage: (page: number) => void;
+  pageCount: number;
 }
 
 export const TransactionsContext = createContext({} as TransactionContextType);
@@ -15,14 +20,28 @@ interface TransactionsProviderProps {
 
 export function TransactionsProvider({ children }: TransactionsProviderProps) {
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [activePage, setActivePage] = useState(1);
+  const [maxPage, setMaxPage] = useState(1);
+
+  const limit = 5;
 
   async function fetchTransactions(query?: string) {
-    let url = "http://localhost:3333/transactions";
+    let url = `http://localhost:3333/transactions?_page=${activePage}&_limit=5&_sort=createdAt&_order=desc`;
 
-    if (query) url += "?description_like=" + query;
+    if (query) url += "&description_like=" + query;
 
     const response = await fetch(url);
     const data = await response.json();
+
+    const xTotal = response.headers.get("X-Total-Count");
+
+    const totalRecords = xTotal == null ? 1 : Number.parseInt(xTotal);
+    let totalPages = Math.trunc(totalRecords / limit);
+    if (totalRecords % limit > 0) {
+      totalPages += 1;
+    }
+
+    setMaxPage(totalPages);
 
     setTransactions(data);
   }
@@ -43,9 +62,29 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
     setTransactions(data);
   }
 
+  function goToFirst() {
+    setActivePage(1);
+  }
+
+  function goToLast() {
+    setActivePage(pageCount);
+  }
+
+  function goToPage(page: number) {
+    setActivePage(page);
+  }
+
+  function pageCount(): number {
+    return maxPage;
+  }
+
   useEffect(() => {
     fetchTransactions();
   }, []);
+
+  useEffect(() => {
+    fetchTransactions();
+  }, [activePage]);
 
   return (
     <TransactionsContext.Provider
@@ -53,6 +92,11 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
         transactions: transactions,
         fetchTransactions,
         createTransaction,
+        activePage,
+        pageCount: maxPage,
+        goToFirst,
+        goToLast,
+        goToPage,
       }}
     >
       {children}
