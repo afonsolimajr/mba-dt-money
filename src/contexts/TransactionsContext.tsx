@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Transaction } from "@/interfaces/Transaction.interface";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
@@ -12,6 +13,7 @@ interface TransactionContextType {
   pageCount: number;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const TransactionsContext = createContext({} as TransactionContextType);
 
 interface TransactionsProviderProps {
